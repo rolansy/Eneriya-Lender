@@ -1,0 +1,26 @@
+Abstract Eneriya 2.0
+Bridging the Financial Gap 
+A Peer-to-Peer Lending Platform for Students and Young Professionals
+
+Problem: 
+Rising educational costs, limited access to traditional finance, and the need for alternative options for managing debt impact a significant portion of the population, particularly:
+College and university students: Struggling with tuition fees, living expenses, and limited credit history.
+Young professionals: Seeking funding for car purchases, business ventures, or consolidating debt, often without established credit scores.
+Related Issues: Predatory lending practices, high-interest rates, and difficulties accessing capital hinder financial well-being and can perpetuate existing financial inequalities.
+
+
+Solution: 
+We propose a secure and comprehensive peer-to-peer (P2P) lending platform designed to empower these groups:
+Students and young professionals: Gain access to flexible loan options with competitive interest rates, independent of traditional financial institutions.
+Investors: Earn competitive returns on their investments while supporting the aspirations of future generations.
+
+
+Peer-to-peer point system: 
+Incentivizes responsible borrowing and timely repayments.
+Fixed-deposit option: 
+Provides lenders with secure investment opportunities.
+Interest rate selector and suggester: Offers transparency and control over loan and investment terms.
+Expected Outcome: This platform aims to:
+Increase financial inclusion: Provide access to alternative funding sources and promote responsible financial management.
+Reduce dependence on predatory lending: Offer competitive rates and transparent terms.
+Empower students and young professionals: Invest in their future and contribute to their financial goals.
