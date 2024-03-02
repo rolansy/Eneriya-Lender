@@ -1,18 +1,31 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, redirect
 from flask_sqlalchemy import SQLAlchemy
-from flask_login import UserMixin
+from flask_login import UserMixin, LoginManager, login_user, login_required, logout_user, current_user
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import InputRequired, Length, ValidationError
 import os
-
+from flask_bcrypt import Bcrypt
 
 
 app=Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
-db=SQLAlchemy(app)
-app.config['SECRET_KEY'] = 'thisisasecretkey'
 
+bcrypt=Bcrypt(app)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+app.config['SECRET_KEY'] = 'thisisasecretkey'
+db=SQLAlchemy(app)
+
+'''app.app_context().push()
+with app.app_context():
+    db.create_all()'''
+        
+login_manager=LoginManager()
+login_manager.init_app(app)
+login_manager.login_view='login'
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
 
 class User(db.Model, UserMixin):
     id=db.Column(db.Integer, primary_key=True)
@@ -57,11 +70,17 @@ def login():
 @app.route('/register',methods=['GET','POST'])
 def register():
     form=RegisterForm()
+    
+    if form.validate_on_submit():
+        hashed_password=bcrypt.generate_password_hash(form.password.data).decode('utf-8')
+        new_user=User(username=form.username.data, password=hashed_password)
+        db.session.add(new_user)
+        db.session.commit()
+        return redirect(url_for('login'))
+    
     return render_template("register.html",form=form)
 
 
 if __name__ =="__main__":
     app.run(debug=True)
     
-with app.app_context(): 
-    db.create_all()
