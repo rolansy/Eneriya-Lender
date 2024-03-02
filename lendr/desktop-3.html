@@ -73,7 +73,7 @@
 
           <h2 class="profile">BORROW</h2>
         </div>
-        <div class="gemini-generated-image-2-1-container">
+        <div class="gemini-generated-image-2-1-container" id="fm">
           <img
             class="gemini-generated-image-2-11"
             alt=""
@@ -122,21 +122,28 @@
       var frameButton = document.getElementById("frameButton");
       if (frameButton) {
         frameButton.addEventListener("click", function (e) {
-          window.location.href = "./desktop.html";
+          window.location.href = "./index.html";
         });
       }
       
       var frameContainer = document.getElementById("frameContainer");
       if (frameContainer) {
         frameContainer.addEventListener("click", function (e) {
-          window.location.href = "./desktop4.html";
+          window.location.href = "./desktop-5.html";
         });
       }
       
       var frameContainer1 = document.getElementById("frameContainer1");
       if (frameContainer1) {
         frameContainer1.addEventListener("click", function (e) {
-          window.location.href = "desktop2.html";
+          window.location.href = "desktop-2.html";
+        });
+      }
+
+      var frameContainer2 = document.getElementById("fm");
+      if (frameContainer2) {
+        frameContainer2.addEventListener("click", function (e) {
+          window.location.href = "desktop-6.html";
         });
       }
       var scrollAnimElements = document.querySelectorAll("[data-animate-on-scroll]");
