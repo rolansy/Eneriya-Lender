@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(to right, #f08080, #80c1ff); /* Gradient background */
+      animation: waving 5s ease-in-out infinite alternate; /* Animation for waving effect */
+    }
+
+    @keyframes waving {
+      0% { background-position: 0 0; }
+      50% { background-position: 100% 0; }
+      100% { background-position: 0 0; }
+    }
+
+    .login-form {
+      text-align: center;
+      padding: 20px;
+      border-radius: 10px; /* Round corners */
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px; /* Round corners */
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Login Page</h1>
+  <form method="POST" action="" class="login-form">
+    {{ form.hidden_tag() }}
+    <div>
+      {{ form.username(placeholder="Username") }}
+    </div>
+    <div>
+      {{ form.password(placeholder="Password") }}
+    </div>
+    {{ form.submit() }}
+  </form>
+  <a href="{{ url_for('register') }}">Sign Up</a><br>
+  <a href="/">Home</a>
+</body>
+</html>
