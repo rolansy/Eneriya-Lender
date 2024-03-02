@@ -1,0 +1,1 @@
+{"mappings":"AAAA","sources":["frame.css"],"sourcesContent":[".frame {\n  width: 100%;\n  position: relative;\n  height: 24px;\n  overflow: hidden;\n}\n"],"names":[],"version":3,"file":"frame.25074684.css.map","sourceRoot":"/__parcel_source_root/"}
