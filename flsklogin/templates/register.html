@@ -7,5 +7,14 @@
 </head>
 <body>
     <h1>Register Page</h1>
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        {{ form.username}}
+        {{ form.password}}
+        {{ form.submit}}
+    
+    </form>
+    <a href="\login">Login</a><br>
+    <a href="\">Home</a>
 </body>
 </html>
